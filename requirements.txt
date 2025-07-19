@@ -1,0 +1,11 @@
+streamlit
+google-generativeai
+gtts
+deep-translator
+pandas
+numpy
+opencv-python-headless
+torch
+torchmetrics
+torchsummary
+seaborn
