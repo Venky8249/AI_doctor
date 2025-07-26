@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Medical Doctor - Welcome</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #FFFFFF;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Color Palette */
+        .accent-color { color: #10B981; }
+        .accent-bg { background-color: #10B981; }
+        .accent-gradient { background-image: linear-gradient(to right, #10B981, #0d9469); }
+        .secondary-bg { background-color: #1E1E1E; }
+
+        /* Hero Section Background */
+        .hero-section {
+            background: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.85)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Card Hover Effect */
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.2), 0 10px 10px -5px rgba(16, 185, 129, 0.1);
+        }
+
+        /* Scroll Animation Setup */
+        .scroll-target {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-target.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Added Animation for Hero Elements */
+        .hero-title {
+            animation: fadeInDown 1s ease-out;
+        }
+        .hero-subtitle {
+            animation: fadeInUp 1s ease-out 0.5s;
+            animation-fill-mode: backwards;
+        }
+        .hero-button {
+            animation: fadeInUp 1s ease-out 1s;
+            animation-fill-mode: backwards;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="py-4 px-6 md:px-12 secondary-bg sticky top-0 z-50 shadow-lg backdrop-blur-md bg-opacity-75">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3">
+                <i class="fas fa-stethoscope text-3xl accent-color"></i>
+                <h1 class="text-2xl font-bold">AI Medical Doctor</h1>
+            </a>
+            
+            <!-- Right-aligned container for nav and buttons -->
+            <div class="flex items-center gap-8">
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#how-it-works" class="text-gray-300 hover:text-white transition-colors duration-300">How It Works</a>
+                    <a href="#features" class="text-gray-300 hover:text-white transition-colors duration-300">Features</a>
+                    <a href="#disclaimer" class="text-gray-300 hover:text-white transition-colors duration-300">Disclaimer</a>
+                </nav>
+
+                 <a href="https://aidoctor-v.streamlit.app/" class="accent-gradient text-white font-bold py-2 px-6 rounded-full hover:shadow-lg hover:shadow-green-500/50 transition-all duration-300 hidden md:inline-block">
+                    Launch App
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-2xl p-2">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4">
+            <nav class="flex flex-col gap-4 p-4">
+                <a href="#how-it-works" class="text-gray-300 hover:text-white transition-colors py-2 text-center">How It Works</a>
+                <a href="#features" class="text-gray-300 hover:text-white transition-colors py-2 text-center">Features</a>
+                <a href="#disclaimer" class="text-gray-300 hover:text-white transition-colors py-2 text-center">Disclaimer</a>
+                <a href="https://aidoctor-v.streamlit.app/" class="accent-gradient text-white font-bold py-2 px-6 rounded-full mt-2 text-center">
+                    Launch App
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center py-20 md:py-32 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-4xl md:text-6xl font-bold mb-4 leading-tight hero-title">Instant AI-Powered Medical Image Analysis</h2>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8 hero-subtitle">
+                Upload your medical scans and receive a detailed analysis and audio summary in seconds. Harness the power of AI for preliminary insights.
+            </p>
+            <a href="https://aidoctor-v.streamlit.app/" class="accent-gradient text-white font-bold py-4 px-10 rounded-full hover:shadow-xl hover:shadow-green-500/50 transition-all duration-300 text-lg inline-block transform hover:scale-105 hero-button">
+                Get Started Now
+            </a>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 px-6">
+        <div class="container mx-auto text-center">
+            <div class="scroll-target">
+                <h3 class="text-3xl font-bold mb-2">How It Works</h3>
+                <p class="text-gray-400 mb-12">A simple three-step process to get your analysis.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Step 1 -->
+                <div class="secondary-bg p-8 rounded-xl scroll-target">
+                    <div class="accent-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-upload text-3xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-semibold mb-2">1. Upload Image</h4>
+                    <p class="text-gray-400">Securely upload your medical image file (PNG, JPG, etc.).</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="secondary-bg p-8 rounded-xl scroll-target" style="transition-delay: 200ms;">
+                    <div class="accent-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-brain text-3xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-semibold mb-2">2. AI Analysis</h4>
+                    <p class="text-gray-400">Our advanced AI model analyzes the image for potential issues.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="secondary-bg p-8 rounded-xl scroll-target" style="transition-delay: 400ms;">
+                    <div class="accent-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-file-audio text-3xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-semibold mb-2">3. Get Results</h4>
+                    <p class="text-gray-400">Receive a detailed text report and an audio summary of the findings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-6 secondary-bg">
+        <div class="container mx-auto text-center">
+            <div class="scroll-target">
+                <h3 class="text-3xl font-bold mb-12">Key Features</h3>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card p-6 rounded-lg scroll-target">
+                    <i class="fas fa-microscope text-4xl accent-color mb-4"></i>
+                    <h4 class="text-xl font-bold">Detailed Diagnosis</h4>
+                    <p class="text-gray-400">Get structured reports on potential anomalies and diseases.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card p-6 rounded-lg scroll-target" style="transition-delay: 200ms;">
+                    <i class="fas fa-volume-up text-4xl accent-color mb-4"></i>
+                    <h4 class="text-xl font-bold">Audio Summaries</h4>
+                    <p class="text-gray-400">Listen to your results in multiple languages and accents.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-card p-6 rounded-lg scroll-target" style="transition-delay: 400ms;">
+                    <i class="fas fa-language text-4xl accent-color mb-4"></i>
+                    <h4 class="text-xl font-bold">Multi-Language</h4>
+                    <p class="text-gray-400">Analysis available in English, Hindi, Bengali, and more.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Disclaimer Section -->
+    <section id="disclaimer" class="py-16 px-6 text-center scroll-target">
+        <div class="container mx-auto max-w-3xl">
+            <i class="fas fa-exclamation-triangle text-yellow-400 text-4xl mb-4"></i>
+            <h3 class="text-2xl font-bold mb-4">Important Disclaimer</h3>
+            <p class="text-gray-400">
+                This tool is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="secondary-bg py-8 text-center text-gray-400">
+        <div class="flex justify-center gap-6">
+            <a href="https://github.com/Venky8249" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300">
+                <i class="fab fa-github text-2xl"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/venkatesh-gummadidala-923419291/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300">
+                <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // JavaScript for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            const targets = document.querySelectorAll('.scroll-target');
+            targets.forEach(target => {
+                observer.observe(target);
+            });
+
+            // JavaScript for mobile menu
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>
