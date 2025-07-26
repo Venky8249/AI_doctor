@@ -239,7 +239,7 @@ with st.sidebar:
     
     # Add the Home/Reset button
     st.button("🏠 New Analysis", on_click=reset_app_state, use_container_width=True)
-    st.markdown('<a href="https://eye-diseases.vercel.app/" target="_self" class="home-button">🏠 Home</a>', unsafe_allow_html=True)
+    st.markdown('<a href="https://ai-doctor-rho.vercel.app/" target="_self" class="home-button">🏠 Home</a>', unsafe_allow_html=True)
     st.markdown("---")
     # Language options
     languages = {
