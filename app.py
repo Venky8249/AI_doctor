@@ -1,7 +1,7 @@
 import streamlit as st
 from pathlib import Path
 import google.generativeai as genai
-#from api_key import api_key  # Make sure you have this file with your key
+from api_key import api_key  # Make sure you have this file with your key
 from gtts import gTTS
 from deep_translator import GoogleTranslator
 import os
@@ -9,15 +9,6 @@ import time
 import glob
 import re
 
-try:
-    api_key = st.secrets["api_keys"]["api_key"]
-    #st.success("API key successfully loaded from secrets!")
-    # Now you can use the 'api_key' variable
-    # os.environ["YOUR_API_KEY_ENV_NAME"] = api_key # Optional: if a library needs it as an env var
-
-except KeyError:
-    st.error("API key not found. Please check your Streamlit secrets configuration.")
-    st.stop()
 # --- Page Configuration ---
 st.set_page_config(
     page_title="AI Medical Doctor",
