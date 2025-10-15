@@ -208,7 +208,7 @@ Important Notes:
 4. Your insights are invaluable in guiding clinical decisions. Please proceed with the analysis, adhering to the structured approach outlined above."""
 
 model = genai.GenerativeModel(
-    model_name="gemini-1.5-flash",
+    model_name="gemini-3-flash-preview",
     generation_config=generation_config,
     safety_settings=safety_settings
 )
