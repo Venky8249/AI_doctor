@@ -1,1 +1,1 @@
-api_key="AIzaSyDseCVaa_4ptIyXAY56_knkI7LLYqUjbsQ"
+api_key=st.secrets["GROQ_API_KEY"]
