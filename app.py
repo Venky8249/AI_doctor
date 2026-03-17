@@ -174,7 +174,7 @@ if 'uploaded_file_info' not in st.session_state:
 
 # --- API and Model Configuration ---
 try:
-    genai.configure(api_key=api_key)
+    genai.configure(api_key=st.secrets[api_key])
 except (AttributeError, NameError):
     st.error("Please provide your API key in an `api_key.py` file.")
     st.stop()
